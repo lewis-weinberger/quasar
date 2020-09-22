@@ -12,6 +12,8 @@
 #include "proto.h"   /* Function prototypes */
 #include "config.h"  /* Configuration       */
 
+struct System quasar;
+
 int main(int argc, char **argv) {
     int test = 0;
     unsigned char loadmem[256];

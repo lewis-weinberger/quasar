@@ -5,7 +5,7 @@
 #include "proto.h"
 #include "config.h"
 
-void readnum(char *str, unsigned char *num) {
+static void readnum(char *str, unsigned char *num) {
     /* Generate number from string with binary representation */
     for (int i = 0; i < 8; i++) {
         if (str[i] == '1')
@@ -13,7 +13,7 @@ void readnum(char *str, unsigned char *num) {
     }
 }
 
-void parse_qmc(char *arg, unsigned char *loadmem) {
+static void parse_qmc(char *arg, unsigned char *loadmem) {
     /* Machine code can be read directly into memory         */
     /* Although this won't do any checking for code validity */
     

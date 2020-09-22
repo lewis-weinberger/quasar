@@ -3,9 +3,10 @@
 #include <unistd.h>
 
 #include "globals.h"
+#include "proto.h"
 #include "config.h"
 
-void printnum(unsigned char num, char *str) {
+static void printnum(unsigned char num, char *str) {
     /* Create string with binary, hex and decimal representations of number */
     sprintf(str, "%c%c%c%c %c%c%c%c (0x%02X) (%03d)", 
             num & 0x80 ? '1' : '0', 
@@ -19,7 +20,7 @@ void printnum(unsigned char num, char *str) {
             num, num); 
 }
 
-void myborder(int left, int top, int right, int bottom) {
+static void myborder(int left, int top, int right, int bottom) {
     /* Create a border defined by corner coordinates */
     for (int i = left + 1; i < right + 1; i++){
         attron(COLOR_PAIR(3));
@@ -35,7 +36,7 @@ void myborder(int left, int top, int right, int bottom) {
     }
 }
 
-void background() {
+static void background() {
     /* Generate background console layout */
     attron(COLOR_PAIR(1));
     for (int j = 0; j < NROWS; j++) {

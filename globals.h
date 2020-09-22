@@ -20,7 +20,8 @@ struct System {
   int cbutton;
   int buttonx[7], buttony[7];
   char log[4][15];
-} quasar;
+};
+extern struct System quasar;
 
 /* OPCODES */
 #define LOAD  0x0 /* binary 0000 */

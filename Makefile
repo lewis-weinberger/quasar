@@ -5,7 +5,8 @@ OBJ  := main.o emulator.o parse.o console.o
 INC  := config.h proto.h globals.h
 
 CC     := gcc
-CFLAGS := -Wall
+CFLAGS := -pedantic -Wall -Werror -Wpointer-arith -Wcast-qual \
+          -Wstrict-prototypes -Wmissing-prototypes
 LIBS   := -lncurses
 
 %.o: %.c $(INC)

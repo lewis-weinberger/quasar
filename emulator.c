@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "globals.h"
+#include "proto.h"
 
 void init_emulator(int test, unsigned char *loadmem) {
     /* Initialize system */
